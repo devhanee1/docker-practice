@@ -15,6 +15,10 @@ RUN apt-get install -y php5.6
 # connect php & mysql
 RUN apt-get install -y php5.6-mysql
 
+RUN rm /var/www/html/index.html
+
+COPY index.php /var/www/html
+
 EXPOSE 80
 
 CMD ["apachectl", "-D", "FOREGROUND"]
